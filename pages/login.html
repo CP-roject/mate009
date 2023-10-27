@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/commands.css" rel="stylesheet">
+    <link href="../css/login.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="shortcut icon" href="../img/" type="image/x-icon">
+    <title>MATE009</title>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <div class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container">
+            <a href="" class="navbar-brand text-info">MATE009</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu"><span
+                    class="navbar-toggler-icon"></span></button>
+
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a href="#Features" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="#Statics" class="nav-link">Statics</a></li>
+                    <li class="nav-item"><a href="#FAQ" class="nav-link">Ask me</a></li>
+                    <li class="nav-item"><a href="./pages/commands.html" class="nav-link">Commands</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="linksdrop" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Links</a>
+                        <ul class="dropdown-menu bg-dark" aria-labelledby="linksdrop">
+                            <li><a class="dropdown-item text-muted" href="https://discord.com/api/oauth2/authorize?client_id=1128282675271180338&permissions=1633094691959&scope=applications.commands%20bot">Invite</a></li>
+                            <li><a class="dropdown-item text-muted" href="./pages/no_lite.html">公式サイト</a></li>
+                            <li><a class="dropdown-item text-muted" href="https://discord.gg/jmfDNmBqxY">Support Server</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <li class="navbar-nav nav-item"><a href="" class="btn btn-outline-info">Login</a></li>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <!--フォーム-->
+            <form name="login_form">
+                <center>
+                    <h1 class="contact-title">ログイン</h1>
+                    <p>ID, Passwordご入力の上, 「認証」ボタンをクリックしてください.</p>
+                </center>
+                <div>
+    
+                    <center>
+                        <div>
+                            <input type="id" name="id" placeholder="ID">
+                        </div>
+                        <br>
+                        <div>
+                            <input type="password" name="pass" placeholder="Password" onchange="nextPage()">
+                        </div>
+                    </center>
+    
+                </div>
+                <button type="button" onClick="nextPage();">認証</button>
+            </form>
+    
+            <!--ログイン処理-->
+            <script>
+                function nextPage() {
+                  id = document.login_form.id.value
+                  pwd = document.login_form.pass.value;
+                  // ファイルが存在するかどうかをチェックする
+                  var fileExists = (new File(id + pwd + ".html")).exists();
+                  if (!fileExists) {
+                    // エラーメッセージを表示する
+                    alert("該当するファイルが存在しません。");
+                    return;
+                  }
+                  // ファイルに移動する
+                  var href = location.href;
+                  if (href === undefined) {
+                    alert("ファイルに移動できません。");
+                    return;
+                  }
+                  location.href = id + pwd + ".html";
+                }
+                </script>
+    
+        </div>
+
+  </body>
+
+        <!-- footer -->
+
+        <div class="footer-clean bg-dark">
+            <footer>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-4 col-md-3 item">
+                            <h3>Quick access</h3>
+                            <ul>
+                                <li><a href="#Features">Features</a></li>
+                                <li><a href="#Statics">Statics</a></li>
+                                <li><a href="#FAQ">Ask me</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 col-md-3 item">
+                            <h3>About</h3>
+                            <ul>
+                                <li><a href="./pages/commands.html">Commands</a></li>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="#">License</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 col-md-3 item">
+                            <h3>Links</h3>
+                            <ul>
+                                <li><a href="https://discord.com/api/oauth2/authorize?client_id=1128282675271180338&permissions=1633094691959&scope=applications.commands%20bot">Invite</a></li>
+                                <li><a href="./pages/no_lite.html">公式サイト</a></li>
+                                <li><a href="https://discord.gg/jmfDNmBqxY">Support Server</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 item social"><a href="#"><ion-icon name="logo-discord"></ion-icon></a><a href="#"><ion-icon name="logo-facebook"></ion-icon></a><a href="#"><ion-icon name="logo-twitter"></ion-icon></a><a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                            <p class="copyright">MATE009 © 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-footer font-small text-light mt-5">
+                <div class="footer-copyright text-center">Made with 💖 by
+                    <a href="https://github.com/Hadi-koubeissi/">Hadi Koubeissi</a>
+                    © 2022 Copyright
+                  </div>
+                </div>
+            </footer>
+        </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+<script language="JavaScript" type="text/javascript">
+    function nextPage() {
+        id = document.login_form.id.value //ID枠に入力された値（文字列）を定義
+        pwd = document.login_form.pass.value; //Password枠に入力された値（文字列）を定義
+        location.href = id + pwd + ".html"; //リンク先URLを作成
+    }
+</script>
+
+</html>
