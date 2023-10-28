@@ -22,17 +22,14 @@
 
     <div class="navbar navbar-expand-md bg-dark navbar-dark">
         <div class="container">
-            <a href="" class="navbar-brand text-info">MATE009</a>
+            <a href="../index.html" class="navbar-brand text-info">MATE009</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu"><span
                     class="navbar-toggler-icon"></span></button>
 
             <div class="collapse navbar-collapse" id="mainmenu">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a href="#Features" class="nav-link">Features</a></li>
-                    <li class="nav-item"><a href="#Statics" class="nav-link">Statics</a></li>
-                    <li class="nav-item"><a href="#FAQ" class="nav-link">Ask me</a></li>
-                    <li class="nav-item"><a href="./pages/commands.html" class="nav-link">Commands</a></li>
+                    <li class="nav-item"><a href="https://cp-roject.github.io/mate009/" class="nav-link">Home</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="linksdrop" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Links</a>
@@ -47,52 +44,52 @@
             </div>
         </div>
     </div>
+<div class="hoge_button">
+    <h2>下のloginをクリックしてログインできます</h2>
 
-    <div>
-        <div>
-            <!--フォーム-->
-            <form name="login_form">
-                <center>
-                    <h1 class="contact-title">ログイン</h1>
-                    <p>ID, Passwordご入力の上, 「認証」ボタンをクリックしてください.</p>
-                </center>
-                <div>
-    
-                    <center>
-                        <div>
-                            <input type="id" name="id" placeholder="ID">
-                        </div>
-                        <br>
-                        <div>
-                            <input type="password" name="pass" placeholder="Password" onchange="nextPage()">
-                        </div>
-                    </center>
-    
-                </div>
-                <button type="button" onClick="nextPage();">認証</button>
-            </form>
-    
-            <!--ログイン処理-->
-            <script>
-                function nextPage() {
-                  id = document.login_form.id.value
-                  pwd = document.login_form.pass.value;
-                  // ファイルが存在するかどうかをチェックする
-                  var fileExists = (new File(id + pwd + ".html")).exists();
-                  if (!fileExists) {
-                    // エラーメッセージを表示する
-                    alert("該当するファイルが存在しません。");
-                    return;
-                  }
-                  // ファイルに移動する
-                  var href = location.href;
-                  if (href === undefined) {
-                    alert("ファイルに移動できません。");
-                    return;
-                  }
-                  location.href = id + pwd + ".html";
-                }
-                </script>
+    <div class="hoge_button">
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+</div>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="./img/web_c.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container_2">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#a0a0a0">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
     
         </div>
 
